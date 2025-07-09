@@ -7,8 +7,10 @@ import java.time.LocalDateTime;
 
 public record DadosDetalhamentoTopico(Long id, String titulo, String mensagem, String autor,
                                       @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
-                                      LocalDateTime dataCriacao) {
+                                      LocalDateTime dataCriacao,
+                                      String status,
+                                      String curso) {
     public DadosDetalhamentoTopico(Topico topico){
-this(topico.getId(), topico.getTitulo(), topico.getMensagem(), topico.getAutor(), topico.getDataCriacao());
+this(topico.getId(), topico.getTitulo(), topico.getMensagem(), topico.getAutor(), topico.getDataCriacao(), topico.getStatus(), topico.getCurso());
     }
 }

@@ -21,16 +21,31 @@ public class Topico {
     private String titulo;
     private String mensagem;
     private LocalDateTime dataCriacao;
-    private boolean status;
+    private String status;
     private String autor;
     private String curso;
 
     public Topico(@Valid DadosCadastroTopico dados) {
-        this.status = true;
+        this.status = "Aberto";
         this.titulo = dados.titulo();
         this.mensagem = dados.mensagem();
         this.dataCriacao = LocalDateTime.now();
         this.autor = dados.autor();
         this.curso = dados.curso();
+    }
+
+    public void atualizarInformacoes(@Valid DadosAtualizacaoTopico dados) {
+        if(dados.titulo() != null){
+            this.titulo = dados.titulo();
+        }
+        if (dados.mensagem() != null){
+            this.mensagem = dados.mensagem();
+        }
+        if (dados.autor() != null){
+            this.autor = dados.autor();
+        }
+        if (dados.curso() != null){
+            this.curso = dados.curso();
+        }
     }
 }
