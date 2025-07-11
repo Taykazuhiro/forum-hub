@@ -1,5 +1,6 @@
-package br.com.alura.forum_hub.domain;
+package br.com.alura.forum_hub.domain.dto;
 
+import br.com.alura.forum_hub.domain.Topico;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.time.LocalDateTime;

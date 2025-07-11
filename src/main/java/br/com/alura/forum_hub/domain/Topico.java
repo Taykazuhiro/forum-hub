@@ -1,11 +1,12 @@
 package br.com.alura.forum_hub.domain;
 
+import br.com.alura.forum_hub.domain.dto.DadosAtualizacaoTopico;
+import br.com.alura.forum_hub.domain.dto.DadosCadastroTopico;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 @Table(name = "topicos")
 @Entity(name = "Topico")

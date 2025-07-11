@@ -1,8 +1,11 @@
-package br.com.alura.forum_hub.domain;
+package br.com.alura.forum_hub.domain.dto;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
-public record DadosCadastroTopico(
+public record DadosAtualizacaoTopico(
+        @NotNull
+        Long id,
         @NotBlank
         String titulo,
 
@@ -13,5 +16,5 @@ public record DadosCadastroTopico(
         String autor,
 
         @NotBlank
-        String curso) {
-}
+        String curso
+) {}

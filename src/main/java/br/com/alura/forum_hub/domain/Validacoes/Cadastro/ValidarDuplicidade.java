@@ -1,13 +1,13 @@
-package br.com.alura.forum_hub.domain.Validacoes;
+package br.com.alura.forum_hub.domain.Validacoes.Cadastro;
 
-import br.com.alura.forum_hub.domain.DadosCadastroTopico;
+import br.com.alura.forum_hub.domain.dto.DadosCadastroTopico;
 import br.com.alura.forum_hub.domain.TopicosRepository;
 import br.com.alura.forum_hub.infra.exceptions.ValidacaoException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ValidarDuplicidade implements IValidacaoCadastro{
+public class ValidarDuplicidade implements IValidacaoCadastro {
 @Autowired
 private TopicosRepository repository;
 
