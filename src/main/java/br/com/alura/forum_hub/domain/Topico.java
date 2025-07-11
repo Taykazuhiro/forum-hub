@@ -5,6 +5,7 @@ import jakarta.validation.Valid;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Table(name = "topicos")
 @Entity(name = "Topico")
@@ -35,6 +36,7 @@ public class Topico {
     }
 
     public void atualizarInformacoes(@Valid DadosAtualizacaoTopico dados) {
+
         if(dados.titulo() != null){
             this.titulo = dados.titulo();
         }

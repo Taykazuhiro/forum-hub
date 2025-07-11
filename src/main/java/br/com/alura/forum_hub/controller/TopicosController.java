@@ -1,6 +1,7 @@
 package br.com.alura.forum_hub.controller;
 
 import br.com.alura.forum_hub.domain.*;
+import br.com.alura.forum_hub.domain.Validacoes.ValidacaoExisteNoBanco;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -17,6 +18,9 @@ public class TopicosController {
 
     @Autowired
     private TopicosRepository repository;
+
+    @Autowired
+    private ValidacaoExisteNoBanco validacaoExisteNoBanco;
 
     @PostMapping
     @Transactional

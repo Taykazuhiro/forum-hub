@@ -1,6 +1,7 @@
 package br.com.alura.forum_hub.domain;
 
 import aj.org.objectweb.asm.commons.Remapper;
+import jakarta.validation.constraints.NotBlank;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,5 +16,7 @@ public interface TopicosRepository extends JpaRepository<Topico, Long>{
             LOWER(t.status) = LOWER(:status)
             """)
     Page<Topico> findAllByStatusIgnoreCase(@Param("status") String status, Pageable paginacao);
+
+    Topico findByTituloAndMensagem(@NotBlank String titulo, @NotBlank String mensagem);
 }
 
