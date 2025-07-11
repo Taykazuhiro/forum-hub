@@ -52,7 +52,7 @@ public class Topico {
         }
     }
 
-    public void fechar() {
+    public void fecharTopico() {
     this.status="fechado";
     }
 

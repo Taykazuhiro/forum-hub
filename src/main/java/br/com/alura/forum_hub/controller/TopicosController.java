@@ -56,15 +56,14 @@ public class TopicosController {
     @DeleteMapping("/{id}")
     @Transactional
     public ResponseEntity deletar(@PathVariable Long id){
-        repository.deleteById(id);
+        validador.deletar(id);
         return ResponseEntity.noContent().build();
     }
 
     @DeleteMapping("/resolved/{id}")
     @Transactional
     public ResponseEntity fechar(@PathVariable Long id){
-        var topico = repository.getReferenceById(id);
-        topico.fechar();
+        validador.fechar(id);
         return ResponseEntity.noContent().build();
     }
 

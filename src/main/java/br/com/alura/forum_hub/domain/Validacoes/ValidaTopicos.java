@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ValidaTopicos {
@@ -36,8 +37,28 @@ public class ValidaTopicos {
     }
 
     public Topico atualizacao(@Valid DadosAtualizacaoTopico dados) {
-        var topico = repository.getReferenceById(dados.id());
-        topico.atualizarInformacoes(dados);
-        return topico;
+         Optional<Topico> topico = Optional.of(repository.getReferenceById(dados.id()));
+         if (topico.isPresent()){
+             var topicoAtualizado = topico.get();
+             topicoAtualizado.atualizarInformacoes(dados);
+             return topicoAtualizado;
+         }
+        throw new ValidacaoException("Não foi possível atualizar. Tópico não existe.");
+    }
+
+    public void deletar(Long id) {
+        Optional<Topico> topico = Optional.of(repository.getReferenceById(id));
+        if (topico.isPresent()){
+            repository.deleteById(id);
+        }
+
+    }
+
+    public void fechar(Long id) {
+        Optional<Topico> topico = Optional.of(repository.getReferenceById(id));
+        if (topico.isPresent()){
+            var topicoFechado = topico.get();
+            topicoFechado.fecharTopico();
+        }
     }
 }
