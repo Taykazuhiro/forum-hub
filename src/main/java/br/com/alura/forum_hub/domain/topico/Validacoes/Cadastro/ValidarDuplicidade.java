@@ -1,7 +1,7 @@
-package br.com.alura.forum_hub.domain.Validacoes.Cadastro;
+package br.com.alura.forum_hub.domain.topico.Validacoes.Cadastro;
 
-import br.com.alura.forum_hub.domain.dto.DadosCadastroTopico;
-import br.com.alura.forum_hub.domain.TopicosRepository;
+import br.com.alura.forum_hub.domain.topico.dto.DadosCadastroTopico;
+import br.com.alura.forum_hub.domain.topico.TopicosRepository;
 import br.com.alura.forum_hub.infra.exceptions.ValidacaoException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

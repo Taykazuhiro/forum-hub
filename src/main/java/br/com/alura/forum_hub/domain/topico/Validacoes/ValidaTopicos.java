@@ -1,10 +1,10 @@
-package br.com.alura.forum_hub.domain.Validacoes;
+package br.com.alura.forum_hub.domain.topico.Validacoes;
 
-import br.com.alura.forum_hub.domain.Topico;
-import br.com.alura.forum_hub.domain.TopicosRepository;
-import br.com.alura.forum_hub.domain.Validacoes.Cadastro.IValidacaoCadastro;
-import br.com.alura.forum_hub.domain.dto.DadosAtualizacaoTopico;
-import br.com.alura.forum_hub.domain.dto.DadosCadastroTopico;
+import br.com.alura.forum_hub.domain.topico.Topico;
+import br.com.alura.forum_hub.domain.topico.TopicosRepository;
+import br.com.alura.forum_hub.domain.topico.Validacoes.Cadastro.IValidacaoCadastro;
+import br.com.alura.forum_hub.domain.topico.dto.DadosAtualizacaoTopico;
+import br.com.alura.forum_hub.domain.topico.dto.DadosCadastroTopico;
 import br.com.alura.forum_hub.infra.exceptions.ValidacaoException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

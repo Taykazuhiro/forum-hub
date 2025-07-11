@@ -1,6 +1,6 @@
-package br.com.alura.forum_hub.domain.dto;
+package br.com.alura.forum_hub.domain.topico.dto;
 
-import br.com.alura.forum_hub.domain.Topico;
+import br.com.alura.forum_hub.domain.topico.Topico;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotNull;
 

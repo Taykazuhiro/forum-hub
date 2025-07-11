@@ -1,7 +1,7 @@
-package br.com.alura.forum_hub.domain;
+package br.com.alura.forum_hub.domain.topico;
 
-import br.com.alura.forum_hub.domain.dto.DadosAtualizacaoTopico;
-import br.com.alura.forum_hub.domain.dto.DadosCadastroTopico;
+import br.com.alura.forum_hub.domain.topico.dto.DadosAtualizacaoTopico;
+import br.com.alura.forum_hub.domain.topico.dto.DadosCadastroTopico;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.*;
