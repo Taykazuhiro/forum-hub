@@ -48,4 +48,10 @@ public class Topico {
             this.curso = dados.curso();
         }
     }
+
+    public void fechar() {
+    this.status="fechado";
+    }
+
+
 }

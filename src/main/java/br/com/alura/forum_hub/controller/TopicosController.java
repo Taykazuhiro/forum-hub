@@ -11,14 +11,12 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("topicos")
-public class topicosController {
+public class TopicosController {
 
     @Autowired
-    private topicosRepository repository;
+    private TopicosRepository repository;
 
     @PostMapping
     @Transactional
@@ -31,7 +29,7 @@ public class topicosController {
 
     @GetMapping
     public Page<DadosListagemTopico> listar (@PageableDefault(size = 10, sort = {"dataCriacao"}) Pageable paginacao){
-        return repository.findAll(paginacao).map(DadosListagemTopico::new);
+        return repository.findAllByStatusIgnoreCase("aberto", paginacao).map(DadosListagemTopico::new);
     }
 
     @GetMapping("/{id}")
@@ -48,5 +46,19 @@ public class topicosController {
         return ResponseEntity.ok(new DadosDetalhamentoTopico(topico));
     }
 
+    @DeleteMapping("/{id}")
+    @Transactional
+    public ResponseEntity deletar(@PathVariable Long id){
+        repository.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping("/resolved/{id}")
+    @Transactional
+    public ResponseEntity fechar(@PathVariable Long id){
+        var topico = repository.getReferenceById(id);
+        topico.fechar();
+        return ResponseEntity.noContent().build();
+    }
 
 }
