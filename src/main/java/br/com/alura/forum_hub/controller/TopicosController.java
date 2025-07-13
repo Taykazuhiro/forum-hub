@@ -6,6 +6,7 @@ import br.com.alura.forum_hub.domain.topico.dto.DadosAtualizacaoTopico;
 import br.com.alura.forum_hub.domain.topico.dto.DadosCadastroTopico;
 import br.com.alura.forum_hub.domain.topico.dto.DadosDetalhamentoTopico;
 import br.com.alura.forum_hub.domain.topico.dto.DadosListagemTopico;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -18,6 +19,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("topicos")
+@SecurityRequirement(name = "bearer-key")
 public class TopicosController {
 
     @Autowired
